@@ -43,6 +43,25 @@ export class AppComponent implements OnInit {
         event.startDate=date;
       }
     console.log(event);
+
+    if(event.starttime)
+  {
+    var dateForStartTime = new Date();
+    let [hours,minutes] = event.starttime.split(':');
+ 
+    dateForStartTime.setHours(+hours); 
+    dateForStartTime.setMinutes(minutes);
+    console.log(dateForStartTime.toTimeString());
+  }
+  
+  if(event.endtime)
+    {
+      var dateForEndTime = new Date();
+      let [hour,minute] = event.endtime.split(':');
+      dateForEndTime.setHours(+hour); 
+      dateForEndTime.setMinutes(minute);
+      console.log(dateForEndTime.toTimeString());
+    }
   }
 
   statusChanges(event) {

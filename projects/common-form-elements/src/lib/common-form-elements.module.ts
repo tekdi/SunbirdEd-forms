@@ -37,7 +37,7 @@ import { DynamicRadioComponent } from './dynamic-radio/dynamic-radio.component';
 import { DynamicDialcodeComponent } from './dynamic-dialcode/dynamic-dialcode.component';
 import { DynamicFrameworkCategoryNestedSelectComponent } from './dynamic-framework-category-nested-select/dynamic-framework-category-nested-select.component';
 import { DynamicDateComponent } from './dynamic-date/dynamic-date.component';
-
+import { DynamicTimeComponent } from './dynamic-time/dynamic-time.component';
 @NgModule({
    declarations: [
       DropdownComponent,
@@ -72,7 +72,8 @@ import { DynamicDateComponent } from './dynamic-date/dynamic-date.component';
       DynamicRadioComponent,
       DynamicDialcodeComponent,
       DynamicFrameworkComponent,
-      DynamicDateComponent
+      DynamicDateComponent,
+      DynamicTimeComponent
    ],
    imports: [
       CommonModule,

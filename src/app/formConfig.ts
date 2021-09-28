@@ -131,6 +131,87 @@ export const timer = [
                 ]
             },
             {
+                'code': 'enddate',
+                'visible': true,
+                'editable': true,
+                'dataType': 'date',
+                'default': 'mm:dd:yyyy',
+                'depends': [
+                    'startdate'
+                ],
+                'name': 'end date',
+                'description': 'end date',
+                'inputType': 'date',
+                'label': 'end date',
+                'placeholder': 'end date',
+                'required': true,
+                'allowpreviousdates':false,
+                'validations': [
+                    {
+                        'type': 'required',
+                        'message': 'End Date is required'
+                    },
+                    {
+                        'type': 'compare',
+                        'criteria': {
+                            '<=': [
+                                'startTime'
+                            ]
+                        },
+                        'message': 'warning date should be greater than start date'
+                    }
+                ]
+            },
+            {
+                'code': 'starttime',
+                'visible': true,
+                'editable': true,
+                'dataType': 'time',
+                // 'depends': [
+                //     'maxTime'
+                // ],
+                'name': 'start time',
+                // 'renderingHints': {
+                //     'class': 'sb-g-col-lg-1'
+                // },
+                'description': 'start time',
+                'inputType': 'time',
+                'label': 'start time',
+                'placeholder': 'start time',
+                'required': true,
+                'validations': [
+                    {
+                        'type': 'required',
+                        'message': 'Start Time is required'
+                    }
+                ]
+            },
+            {
+                'code': 'endtime',
+                'visible': true,
+                'editable': true,
+                'dataType': 'time',
+               // 'default': 'hh:mm:ss',
+                'depends': [
+                    'starttime'
+                ],
+                'name': 'end time',
+                // 'renderingHints': {
+                //     'class': 'sb-g-col-lg-1'
+                // },
+                'description': 'end time',
+                'inputType': 'time',
+                'label': 'end time',
+                'placeholder': 'end time',
+                'required': true,
+                'validations': [
+                    {
+                        'type': 'required',
+                        'message': 'End Time is required'
+                    }
+                ]
+            },
+            {
                 'code': 'description',
                 'dataType': 'text',
                 'description': 'Description of the content',
