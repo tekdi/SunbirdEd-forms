@@ -65,3 +65,7 @@ label {
     padding: 0 4px;
   }
   
+  .sb-date
+    {
+      margin: 1rem 0 !important;
+  }

@@ -284,8 +284,8 @@ export class DynamicFormComponent implements OnInit, OnChanges, OnDestroy  {
           case 'compare':
             validationList.push(this.compareFields.bind(this, element.validations[i].criteria));
             break;
-          case 'minDate':
-            validationList.push(this.compareDate.bind(this, element.validations,element.validations[i]));
+          case 'date':
+            validationList.push(this.validateDate.bind(this, element.validations[i].criteria));
             break;
           case 'maxDate':
               validationList.push(this.compareDate.bind(this, element.validations,element.validations[i]));
@@ -350,8 +350,14 @@ export class DynamicFormComponent implements OnInit, OnChanges, OnDestroy  {
     return null;
     // return moment(control.value, pattern, true).isValid() && control.touched ? null : {time: true};
   }
-
-
+  
+  validateDate(pattern, field, control: AbstractControl){
+    const isPatternMatched = moment(control.value, pattern, true).isValid();
+    if (!isPatternMatched && (control.touched || control.dirty)) {
+      return {time : true};
+    }
+    return null;
+  }
 
   compareFields(criteria, control: AbstractControl): ValidationErrors | null {
     const result = _.find(criteria, (val, key) => {

@@ -26,6 +26,8 @@ export class DynamicDateComponent implements OnInit {
   valueChangesSubscription: Subscription;
   constructor() {
   }
+  today = new Date();
+  todayDate = this.today.getFullYear() + '-' + ('0' + (this.today.getMonth() + 1)).slice(-2) + '-' + ('0' + this.today.getDate()).slice(-2);
 
   ngOnInit() {
     let result = this.validations.find(data => data.type==='dateFormat');
