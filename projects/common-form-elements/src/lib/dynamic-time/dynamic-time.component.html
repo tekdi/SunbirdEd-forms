@@ -1,6 +1,6 @@
 
 <!-- <div class="mb-12 w-100"> -->
-    <div class="sb-input">
+    <div class="sb-input sb-time">
         <label  *ngIf="label"  [attr.data-title]="field.description ? field.description : null" >{{label}}</label>
    
     <div [ngClass]="{'async-text': (asyncValidation && asyncValidation?.trigger), '': (!asyncValidation || !asyncValidation?.trigger)}">
